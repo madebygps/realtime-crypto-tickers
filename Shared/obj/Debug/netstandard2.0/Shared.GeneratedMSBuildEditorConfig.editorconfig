@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = Completed.Shared
+build_property.ProjectDir = /home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/

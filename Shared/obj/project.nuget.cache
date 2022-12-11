@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "OJOCfyZ7FyZxIt8h8S4n5Rat5zzX9l4yUUh6ds2gXVKhWGZGa3n+RXeGqPrAVMWwC3enY1SMK9/uG25zvCn3Mw==",
+  "success": true,
+  "projectFilePath": "/home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/Shared.csproj",
+  "expectedPackageFiles": [
+    "/home/gwyne/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/gwyne/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
