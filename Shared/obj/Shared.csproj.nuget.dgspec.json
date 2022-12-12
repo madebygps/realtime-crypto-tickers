@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/Shared.csproj": {}
+    "C:\\Users\\gwynethp\\Developer\\realtime-crypto-tickers\\Shared\\Shared.csproj": {}
   },
   "projects": {
-    "/home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/Shared.csproj": {
+    "C:\\Users\\gwynethp\\Developer\\realtime-crypto-tickers\\Shared\\Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/Shared.csproj",
+        "projectUniqueName": "C:\\Users\\gwynethp\\Developer\\realtime-crypto-tickers\\Shared\\Shared.csproj",
         "projectName": "Shared",
-        "projectPath": "/home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/Shared.csproj",
-        "packagesPath": "/home/gwyne/.nuget/packages/",
-        "outputPath": "/home/gwyne/Developer/signalr-crypto-tickers/completed/Shared/obj/",
+        "projectPath": "C:\\Users\\gwynethp\\Developer\\realtime-crypto-tickers\\Shared\\Shared.csproj",
+        "packagesPath": "C:\\Users\\gwynethp\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gwynethp\\Developer\\realtime-crypto-tickers\\Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/gwyne/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\gwynethp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netstandard2.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -51,11 +58,12 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/dotnet6-6.0.110/sdk/6.0.110/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -2,7 +2,7 @@
 @inject HttpClient Http
 @using Microsoft.AspNetCore.SignalR.Client;
 @inject NavigationManager NavigationManager
-@inherits FetechDataBase
+@inherits GetTickersBase
 
 
 @if (prices == null)
@@ -13,21 +13,21 @@
 else
 {
     <MudContainer Class="mt-16">
-        <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">$PRICES</MudText>
+        <Animate Animation="Animations.FadeIn" Auto=true>
+        <MudText Typo="Typo.h3" Align="Align.Center" GutterBottom="true">$PRICES</MudText> </Animate>
         <MudText Align="Align.Center">SignalR status: <MudText Align="Align.Center" Color="@(hubConnection?.State.ToString() is "Connected" ? MudBlazor.Color.Success : MudBlazor.Color.Error)">@hubConnection.State</MudText></MudText> 
         <MudGrid Class="mt-8">
+
             @foreach(var coin in prices)
             {
+
+                
                 <Ticker Coin="@coin"></Ticker>
+
             }
+           
         </MudGrid>
     </MudContainer>
          
 }
 
-@code {
-
-    
-    
-
-}

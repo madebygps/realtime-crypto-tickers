@@ -1,26 +1,31 @@
+using System;
+using System.Net;
+using System.Net.Http;
 using System.Text.Json;
+using System.Threading.Tasks;
 using Completed.Shared;
 using Microsoft.Azure.Functions.Worker;
+using Microsoft.Azure.Functions.Worker.Http;
 using Microsoft.Extensions.Logging;
 
 namespace Completed.Api
 {
-    public static class GetCryptoPrices
+    public class TickerFunctions
     {
 
 
-        [Function("GetCryptoPrices")]
-        public async static Task<MyOutputType> Run([TimerTrigger("0 */2 * * * *", UseMonitor = true)] MyInfo myTimer, FunctionContext context)
+        [Function("GetTickers")]
+        public async Task<MyOutputType> RunTimer([TimerTrigger("*/15 * * * * *", UseMonitor = true)] MyInfo myTimer, FunctionContext context)
         {
 
             Coin[]? prices;
             MySignalRMessage mySignalRMessage;
 
-            var logger = context.GetLogger("GetCryptoPrices");
+            var logger = context.GetLogger("GetTickers");
             //logger.LogInformation($"C# Timer trigger function executed at: {myTimer.ScheduleStatus?.LastUpdated}");
             logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            
-    
+
+
             using (var httpClient = new HttpClient())
             {
 
@@ -55,16 +60,25 @@ namespace Completed.Api
                         CosmosCoins = new Coin[1] 
                     };
                 }
-                
-
             }
-        
-            
-
-        
         }
 
-        
+        [Function("GetTickersJson")]
+        public static object Run([HttpTrigger(AuthorizationLevel.Anonymous, "get")] HttpRequestData req,
+            [CosmosDBInput("%DatabaseName%", "%CollectionName%", ConnectionStringSetting = "CosmosDBConnectionString")] Coin[] coins,
+                FunctionContext executionContext)
+        {
+            var logger = executionContext.GetLogger("GetTickersJson");
+            logger.LogInformation("C# HTTP trigger function processed a request.");
+
+            var response = req.CreateResponse(HttpStatusCode.OK);
+            response.Headers.Add("Content-Type", "text/plain; charset=utf-8");
+
+            response.WriteString("Welcome to Azure Functions!");
+
+            return coins;
+        }
+
     }
 
 
